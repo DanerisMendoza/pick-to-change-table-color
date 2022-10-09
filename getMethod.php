@@ -21,6 +21,9 @@
     <select  name="color" method="get">
         <?php 
             for($i=1; $i<=100; $i++){
+              if(isset($_GET['color']) && in_array($i,$arr)){
+                continue;
+              }
               if(isset($_GET['color'])){
                 $colors = $_GET['color'] .','. $i;
               }
